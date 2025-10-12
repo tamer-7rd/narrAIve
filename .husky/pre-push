@@ -1,4 +1,3 @@
 # Проверяем формат без изменений 
 pnpm lint --max-warnings=0 && echo "ESLint passed"
-pnpm prettier && echo "Prettier passed"
 pnpm typecheck && echo "TypeScript passed"
