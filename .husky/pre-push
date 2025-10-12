@@ -1,5 +1,4 @@
-# ESLint: падаем на любом предупреждении
-pnpm exec eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0 && echo "ESLint passed"
-
-# Prettier: проверяем формат (без изменений)
+# Проверяем формат без изменений 
+pnpm lint --max-warnings=0 && echo "ESLint passed"
 pnpm exec prettier --check .
+pnpm typecheck && echo "TypeScript passed"
