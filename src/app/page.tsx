@@ -1,8 +1,10 @@
-// src/app/page.tsx
 export default function Home() {
-  return (
-    <main>
-      <h1>Hello Next.js 🚀</h1>
-    </main>
-  )
+  return <main></main>
 }
+
+// {<Button
+// variant = "primary"
+// size = 'md'
+// >
+//   Subscribe
+// </Button>}
