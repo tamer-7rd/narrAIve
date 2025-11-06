@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,6 +25,6 @@
     "forceConsistentCasingInFileNames": true, // Запрещает разные регистры в именах файлов (file.ts vs File.ts)
     "noFallthroughCasesInSwitch": true // Запрещает "проваливание" между case в switch без break
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules", ".next"]
 }
