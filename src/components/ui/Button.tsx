@@ -15,12 +15,12 @@ export default function Button({
   variant = 'primary',
   className = '',
 }: ButtonProps) {
-  const defaultClasses = 'border-1 border-gray-50 tracking-wide font-nunito text-white'
+  const defaultClasses = 'border-1 button-border rounded-lg tracking-wide font-nunito text-white'
 
   const variantClasses = {
     primary:
-      'bg-cyan-400 underline underline-offset-6 decoration-1 decoration-cyan-400/75 transition-colors duration-100 hover:bg-gray-900',
-    secondary: 'underline underline-offset-7 decoration-cyan-500/75',
+      'bg-cyan-400 underline underline-offset-6 decoration-1 decoration-cyan-300 transition-colors duration-200 hover:bg-cyan-950',
+    secondary: 'underline underline-offset-6 decoration-cyan-300',
   }
 
   const sizeClasses = {

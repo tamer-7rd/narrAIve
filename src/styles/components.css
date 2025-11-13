@@ -1,0 +1,7 @@
+.button-border {
+  border-color: var(--button-border-color);
+}
+
+.searchbar-border {
+  border-color: var(--searchbar-border-color);
+}
