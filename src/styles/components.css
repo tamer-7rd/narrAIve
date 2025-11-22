@@ -4,7 +4,7 @@
   }
 
   .logo-container {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold font-logo;
+    @apply text-2xl sm:text-[2.75rem] font-bold font-logo;
     letter-spacing: 0.05em;
     color: var(--color-text-primary);
   }
