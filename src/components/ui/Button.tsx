@@ -18,7 +18,7 @@ export default function Button({
   className = '',
 }: ButtonProps) {
   const defaultClasses =
-    'border button-border rounded-lg tracking-wider text-lg sm:text-base sm:font-light'
+    'border button-border rounded-md tracking-wider text-lg sm:text-base sm:font-light'
 
   const variantClasses = {
     primary: 'btn-primary underline underline-offset-6 decoration-1 transition-colors duration-300',

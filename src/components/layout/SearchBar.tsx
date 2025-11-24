@@ -13,7 +13,7 @@ export default function SearchBar({ className }: Props) {
         placeholder="Search Narraive"
         className={cn(
           'searchbar-container',
-          'w-full rounded-lg border',
+          'w-full rounded-md border',
           'pl-4 pr-10 py-2',
           'text-base',
           'tracking-wider',
