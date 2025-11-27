@@ -13,6 +13,7 @@ export default function SearchBar({ className }: Props) {
         placeholder="Search Narraive"
         className={cn(
           'searchbar-container',
+          'hidden sm:block', // ← Скрыть на мобильных, показать на десктопе
           'w-full rounded-md border',
           'pl-4 pr-10 py-2',
           'text-base',
@@ -25,11 +26,13 @@ export default function SearchBar({ className }: Props) {
       <MagnifyingGlassIcon
         className={cn(
           'searchbar-icon',
-          'absolute right-7 top-1/2 -translate-y-1/2',
-          'size-5 pointer-events-none'
+          'block', // ← Скрыть на мобильных, показать на десктопе
+          'sm:absolute sm:right-7 sm:top-1/2 sm:-translate-y-1/2',
+          'size-7 sm:size-5 sm:pointer-events-none'
         )}
         aria-hidden="true"
       />
+      {/* Отдельная иконка для мобильных */}
     </div>
   )
 }

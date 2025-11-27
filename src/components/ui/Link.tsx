@@ -5,12 +5,13 @@ interface LinkProps {
   children: React.ReactNode
   href: string
   className?: string
+  onClick?: () => void
 }
 
-export default function CustomLink({ children, href, className = '' }: LinkProps) {
+export default function CustomLink({ children, href, className = '', onClick }: LinkProps) {
   const defaultClasses = 'm-2 tracking-wide text-base font-light'
   return (
-    <Link href={href} className={cn(className, defaultClasses)}>
+    <Link href={href} onClick={onClick} className={cn(defaultClasses, className)}>
       {children}
     </Link>
   )

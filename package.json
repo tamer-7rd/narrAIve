@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:mobile": "IP=$(ipconfig getifaddr \"$(route get default 2>/dev/null | awk '/interface: / {print $2}')\") && echo \"Open on phone: http://$IP:3000\" && next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
