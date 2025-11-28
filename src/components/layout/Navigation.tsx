@@ -1,20 +1,33 @@
-import cn from '@/lib/utils/cn'
 import CustomLink from '../ui/Link'
 import { mainNavLinks } from '@/lib/constants/routes'
 
 type Props = {
   ariaLabel?: string
   className?: string
+  orientation?: 'horizontal' | 'vertical'
+  linkClassName?: string
+  withIcons?: boolean
+  onItemClick?: () => void
 }
 
-export default function Navigation({ className, ariaLabel = 'Primary' }: Props) {
-  const defaultClasses = 'flex'
+export default function Navigation({
+  className,
+  ariaLabel = 'Primary',
+  orientation = 'horizontal',
+  linkClassName = '',
+  withIcons = false,
+  onItemClick,
+}: Props) {
+  const baseListClasses = orientation === 'vertical' ? 'flex flex-col' : 'flex'
   return (
     <nav aria-label={ariaLabel} className={className}>
-      <ul className={cn(defaultClasses)}>
-        {mainNavLinks.map((link) => (
-          <li key={link.href}>
-            <CustomLink href={link.href}>{link.label}</CustomLink>
+      <ul className={baseListClasses}>
+        {mainNavLinks.map(({ href, label, icon: Icon }) => (
+          <li key={href}>
+            <CustomLink href={href} className={linkClassName} onClick={onItemClick}>
+              {withIcons && <Icon className="size-6" />}
+              <span>{label}</span>
+            </CustomLink>
           </li>
         ))}
       </ul>

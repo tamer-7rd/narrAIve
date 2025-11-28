@@ -2,7 +2,7 @@
 
 import cn from '@/lib/utils/cn'
 
-interface ButtonProps {
+type ButtonProps = {
   children: React.ReactNode
   onClick?: () => void
   size?: 'sm' | 'md' | 'lg'

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import cn from '@/lib/utils/cn'
 
-interface LinkProps {
+type LinkProps = {
   children: React.ReactNode
   href: string
   className?: string

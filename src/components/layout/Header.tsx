@@ -1,20 +1,11 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import {
-  Bars3Icon,
-  ChartBarIcon,
-  HomeIcon,
-  NewspaperIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { mainNavLinks } from '@/lib/constants/routes'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Button from '../ui/Button'
 import Logo from '../common/Logo'
 import SearchBar from './SearchBar'
 import Navigation from './Navigation'
-import CustomLink from '../ui/Link'
-import cn from '@/lib/utils/cn'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -39,12 +30,6 @@ export default function Header() {
       document.body.style.overflow = ''
     }
   }, [closeMenu, isMobileMenuOpen])
-
-  const ICONS = {
-    Home: HomeIcon,
-    News: NewspaperIcon,
-    Analytics: ChartBarIcon,
-  }
 
   return (
     <header className="header-container px-4 py-2">
@@ -90,7 +75,7 @@ export default function Header() {
                 aria-label="Close navigation menu"
                 onClick={closeMenu}
               >
-                <XMarkIcon className="size-7" />
+                <XMarkIcon className="size-4" />
               </button>
             </div>
 
@@ -103,28 +88,13 @@ export default function Header() {
               </Button>
             </div>
 
-            <nav aria-label="Mobile Primary Navigation">
-              <ul>
-                {mainNavLinks.map(({ href, label }) => {
-                  const Icon = ICONS[label as keyof typeof ICONS] ?? HomeIcon
-                  return (
-                    <li key={href}>
-                      <CustomLink
-                        href={href}
-                        className={cn(
-                          'mobile-menu-link',
-                          'flex items-center gap-4 rounded-md px-3 py-3 text-xl text-white'
-                        )}
-                        onClick={closeMenu}
-                      >
-                        <Icon className="size-6" />
-                        <span>{label}</span>
-                      </CustomLink>
-                    </li>
-                  )
-                })}
-              </ul>
-            </nav>
+            <Navigation
+              ariaLabel="Mobile Primary Navigation"
+              orientation="vertical"
+              withIcons
+              onItemClick={closeMenu}
+              linkClassName="mobile-menu-link flex items-center gap-4 rounded-md px-3 py-3 text-xl text-white"
+            />
           </div>
         </>
       )}

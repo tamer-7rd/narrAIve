@@ -1,11 +1,11 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
 import cn from '@/lib/utils/cn'
 
-interface Props {
+type SearchBarProps = {
   className?: string
 }
 
-export default function SearchBar({ className }: Props) {
+export default function SearchBar({ className }: SearchBarProps) {
   return (
     <div className={cn('relative', className)}>
       <input

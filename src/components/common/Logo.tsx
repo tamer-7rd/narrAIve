@@ -1,10 +1,10 @@
 import cn from '@/lib/utils/cn'
 
-interface Props {
+type LogoProps = {
   className?: string
 }
 
-export default function Logo({ className }: Props) {
+export default function Logo({ className }: LogoProps) {
   return (
     <h1 className={cn('logo-container', className)}>
       <span>narr</span>

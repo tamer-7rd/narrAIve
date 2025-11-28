@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:mobile": "IP=$(ipconfig getifaddr \"$(route get default 2>/dev/null | awk '/interface: / {print $2}')\") && echo \"Open on phone: http://$IP:3000\" && next dev -H 0.0.0.0",
+    "dev:mobile": "IP=$(ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | head -n1) && if [ -n \"$IP\" ]; then echo \"Open on phone: http://$IP:3000\"; else echo \"Server starting on 0.0.0.0 - check Network URL in Next.js output\"; fi && next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
