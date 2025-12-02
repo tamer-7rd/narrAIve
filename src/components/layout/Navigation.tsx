@@ -25,7 +25,7 @@ export default function Navigation({
         {mainNavLinks.map(({ href, label, icon: Icon }) => (
           <li key={href}>
             <CustomLink href={href} className={linkClassName} onClick={onItemClick}>
-              {withIcons && <Icon className="size-6" />}
+              {withIcons && <Icon className="size-6" aria-hidden="true" />}
               <span>{label}</span>
             </CustomLink>
           </li>

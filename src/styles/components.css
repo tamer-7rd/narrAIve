@@ -51,25 +51,4 @@
   .btn-secondary {
     text-decoration-color: var(--color-button-decoration);
   }
-
-  .mobile-menu-panel {
-    @apply fixed inset-y-0 right-0 z-50 flex w-full max-w-full flex-col overflow-y-auto bg-[#050505] px-6 py-6 shadow-2xl;
-  }
-
-  .mobile-menu-header {
-    @apply flex items-center justify-between;
-  }
-
-  .mobile-menu-close-btn {
-    @apply rounded-full border border-white/25 p-2 text-white transition-opacity hover:opacity-80;
-    background-color: transparent;
-  }
-
-  .mobile-menu-action {
-    @apply w-full text-center text-lg font-medium;
-  }
-
-  .mobile-menu-link {
-    @apply text-lg font-light tracking-wide text-white;
-  }
 }

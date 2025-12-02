@@ -5,6 +5,7 @@ interface NavLink {
   href: string
   label: string
   icon: ComponentType<SVGProps<SVGSVGElement>>
+  // Это единственный способ в TypeScript передать структуру данных внутрь другого типа. (то что сверху этого коммента)
 }
 
 export const mainNavLinks: NavLink[] = [

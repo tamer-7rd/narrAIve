@@ -33,6 +33,7 @@ export default function Header() {
 
   return (
     <header className="header-container px-4 py-2">
+      {/* Desktop version  */}
       <div className="hidden items-center sm:flex sm:flex-nowrap">
         <Logo className="flex-shrink-0" />
         <Navigation className="pl-4" />
@@ -43,6 +44,7 @@ export default function Header() {
         <Button variant="primary">Sign in</Button>
       </div>
 
+      {/* Mobile version  */}
       <div className="flex items-center justify-between sm:hidden">
         <Logo />
         <div className="flex items-center gap-4">
@@ -51,39 +53,45 @@ export default function Header() {
             type="button"
             aria-expanded={isMobileMenuOpen}
             aria-label="Open navigation menu"
-            className="rounded-lg border border-white/20 p-2 text-white"
+            className="rounded-lg border button-border p-2"
             onClick={toggleMenu}
           >
-            <Bars3Icon className="size-6" />
+            <Bars3Icon className="size-6" aria-hidden="true" />
           </button>
         </div>
       </div>
 
+      {/* Mobile opened menu */}
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm sm:hidden"
+            className="fixed inset-0 z-40 bg-[#181a1b]/80 backdrop-blur-sm sm:hidden"
             onClick={closeMenu}
             aria-hidden="true"
           />
-          <div className="mobile-menu-panel sm:hidden">
-            <div className="mobile-menu-header">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation menu"
+            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-full flex-col overflow-y-auto px-6 py-6 shadow-2xl sm:hidden"
+          >
+            <div className="flex items-center justify-between">
               <Logo />
               <button
                 type="button"
-                className="mobile-menu-close-btn"
+                className="rounded-full border border-white/25 bg-transparent p-2 text-white transition-opacity hover:opacity-80"
                 aria-label="Close navigation menu"
                 onClick={closeMenu}
               >
-                <XMarkIcon className="size-4" />
+                <XMarkIcon className="size-4" aria-hidden="true" />
               </button>
             </div>
 
             <div className="flex flex-col gap-3 py-4">
-              <Button variant="primary" className="mobile-menu-action">
+              <Button variant="primary" className="w-full text-center text-lg font-medium">
                 Subscribe
               </Button>
-              <Button variant="primary" className="mobile-menu-action">
+              <Button variant="primary" className="w-full text-center text-lg font-medium">
                 Sign in
               </Button>
             </div>
@@ -93,7 +101,7 @@ export default function Header() {
               orientation="vertical"
               withIcons
               onItemClick={closeMenu}
-              linkClassName="mobile-menu-link flex items-center gap-4 rounded-md px-3 py-3 text-xl text-white"
+              linkClassName="flex items-center gap-4 rounded-md px-3 py-3 text-xl text-white text-lg font-light tracking-wide"
             />
           </div>
         </>

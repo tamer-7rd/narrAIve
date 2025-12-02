@@ -11,6 +11,7 @@ export default function SearchBar({ className }: SearchBarProps) {
       <input
         type="text"
         placeholder="Search Narraive"
+        aria-label="Search articles"
         className={cn(
           'searchbar-container',
           'hidden sm:block', // ← Скрыть на мобильных, показать на десктопе
@@ -32,7 +33,6 @@ export default function SearchBar({ className }: SearchBarProps) {
         )}
         aria-hidden="true"
       />
-      {/* Отдельная иконка для мобильных */}
     </div>
   )
 }
