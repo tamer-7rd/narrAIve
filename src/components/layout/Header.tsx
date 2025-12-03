@@ -32,11 +32,11 @@ export default function Header() {
   }, [closeMenu, isMobileMenuOpen])
 
   return (
-    <header className="header-container px-4 py-2">
+    <header className="header-container px-4">
       {/* Desktop version  */}
-      <div className="hidden items-center sm:flex sm:flex-nowrap">
-        <Logo className="flex-shrink-0" />
-        <Navigation className="pl-4" />
+      <div className="hidden items-center sm:flex sm:flex-nowrap py-1">
+        <Logo className="flex-shrink-0 mb-0.5" />
+        <Navigation className="pl-4" linkClassName="m-2" />
         <SearchBar className="sm:flex-1 sm:px-4" />
         <Button variant="primary" className="mr-2">
           Subscribe
@@ -45,18 +45,17 @@ export default function Header() {
       </div>
 
       {/* Mobile version  */}
-      <div className="flex items-center justify-between sm:hidden">
+      <div className="sm:hidden items-center flex justify-between py-2">
         <Logo />
-        <div className="flex items-center gap-4">
+        <div className="flex gap-4 items-center">
           <SearchBar />
           <button
             type="button"
             aria-expanded={isMobileMenuOpen}
             aria-label="Open navigation menu"
-            className="rounded-lg border button-border p-2"
             onClick={toggleMenu}
           >
-            <Bars3Icon className="size-6" aria-hidden="true" />
+            <Bars3Icon className="size-7" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -65,43 +64,35 @@ export default function Header() {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-[#181a1b]/80 backdrop-blur-sm sm:hidden"
-            onClick={closeMenu}
+            className="z-40 inset-0  backdrop-blur-sm bg-[#181a1b]/75 sm:hidden fixed"
             aria-hidden="true"
           />
           <div
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
-            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-full flex-col overflow-y-auto px-6 py-6 shadow-2xl sm:hidden"
+            className="z-50 sm:hidden fixed inset-0 flex flex-col m-5 overflow-y-auto"
           >
-            <div className="flex items-center justify-between">
+            <div className="flex justify-between items-center">
               <Logo />
-              <button
-                type="button"
-                className="rounded-full border border-white/25 bg-transparent p-2 text-white transition-opacity hover:opacity-80"
-                aria-label="Close navigation menu"
-                onClick={closeMenu}
-              >
-                <XMarkIcon className="size-4" aria-hidden="true" />
+              <button type="button" aria-label="Close navigation menu" onClick={closeMenu}>
+                <XMarkIcon className="size-7"></XMarkIcon>
               </button>
             </div>
 
-            <div className="flex flex-col gap-3 py-4">
-              <Button variant="primary" className="w-full text-center text-lg font-medium">
-                Subscribe
-              </Button>
-              <Button variant="primary" className="w-full text-center text-lg font-medium">
-                Sign in
-              </Button>
+            <div className="flex flex-col py-7 gap-3">
+              <Button variant="primary">Subscribe</Button>
+              <Button variant="primary">Sign in</Button>
             </div>
 
             <Navigation
+              className="w-1/3"
+              onItemClick={closeMenu}
               ariaLabel="Mobile Primary Navigation"
               orientation="vertical"
               withIcons
-              onItemClick={closeMenu}
-              linkClassName="flex items-center gap-4 rounded-md px-3 py-3 text-xl text-white text-lg font-light tracking-wide"
+              iconClassName="size-6"
+              linkClassName="flex gap-3 py-3 text-lg tracking-wide"
             />
           </div>
         </>

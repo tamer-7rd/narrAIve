@@ -6,6 +6,7 @@ type Props = {
   className?: string
   orientation?: 'horizontal' | 'vertical'
   linkClassName?: string
+  iconClassName?: string
   withIcons?: boolean
   onItemClick?: () => void
 }
@@ -15,6 +16,7 @@ export default function Navigation({
   ariaLabel = 'Primary',
   orientation = 'horizontal',
   linkClassName = '',
+  iconClassName = '',
   withIcons = false,
   onItemClick,
 }: Props) {
@@ -25,7 +27,7 @@ export default function Navigation({
         {mainNavLinks.map(({ href, label, icon: Icon }) => (
           <li key={href}>
             <CustomLink href={href} className={linkClassName} onClick={onItemClick}>
-              {withIcons && <Icon className="size-6" aria-hidden="true" />}
+              {withIcons && <Icon className={iconClassName} aria-hidden="true" />}
               <span>{label}</span>
             </CustomLink>
           </li>
