@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from 'react'
-import { ChartBarIcon, HomeIcon, NewspaperIcon } from '@heroicons/react/24/outline'
+import { HiChartBar, HiHome, HiNewspaper } from 'react-icons/hi2'
 
 interface NavLink {
   href: string
@@ -9,7 +9,7 @@ interface NavLink {
 }
 
 export const mainNavLinks: NavLink[] = [
-  { href: '/', label: 'Home', icon: HomeIcon },
-  { href: '/News', label: 'News', icon: NewspaperIcon },
-  { href: '/Data', label: 'Analytics', icon: ChartBarIcon },
+  { href: '/', label: 'Home', icon: HiHome },
+  { href: '/News', label: 'News', icon: HiNewspaper },
+  { href: '/Data', label: 'Analytics', icon: HiChartBar },
 ]

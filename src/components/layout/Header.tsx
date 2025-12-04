@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { HiBars3, HiXMark } from 'react-icons/hi2'
 import Button from '../ui/Button'
 import Logo from '../common/Logo'
 import SearchBar from './SearchBar'
@@ -55,7 +55,7 @@ export default function Header() {
             aria-label="Open navigation menu"
             onClick={toggleMenu}
           >
-            <Bars3Icon className="size-7" aria-hidden="true" />
+            <HiBars3 className="size-7" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Header() {
             <div className="flex justify-between items-center">
               <Logo />
               <button type="button" aria-label="Close navigation menu" onClick={closeMenu}>
-                <XMarkIcon className="size-7"></XMarkIcon>
+                <HiXMark className="size-7"></HiXMark>
               </button>
             </div>
 

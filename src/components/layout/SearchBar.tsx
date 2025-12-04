@@ -1,4 +1,4 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import { HiMagnifyingGlass } from 'react-icons/hi2'
 import cn from '@/lib/utils/cn'
 
 type SearchBarProps = {
@@ -24,7 +24,7 @@ export default function SearchBar({ className }: SearchBarProps) {
           'focus:outline-none'
         )}
       />
-      <MagnifyingGlassIcon
+      <HiMagnifyingGlass
         className={cn(
           'searchbar-icon',
           'block', // ← Скрыть на мобильных, показать на десктопе
