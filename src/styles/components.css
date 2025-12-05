@@ -1,0 +1,54 @@
+@layer components {
+  .button-border {
+    border-color: var(--color-border);
+  }
+
+  .logo-container {
+    @apply text-3xl sm:text-[2.75rem] font-bold font-logo;
+    letter-spacing: 0.05em;
+    color: var(--color-text-primary);
+  }
+
+  .logo-a {
+    color: var(--color-logo-accent);
+    font-family: sans-serif;
+    margin-left: -0.1em;
+  }
+
+  .logo-i {
+    color: var(--color-logo-accent);
+  }
+
+  .header-container {
+    background-color: var(--color-header-bg);
+    color: var(--color-text-primary);
+  }
+
+  .searchbar-container {
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+  }
+
+  .searchbar-container::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .searchbar-icon {
+    color: var(--color-text-muted);
+  }
+
+  .btn-primary {
+    background-color: var(--color-button-primary-bg);
+    opacity: 0.9;
+    text-decoration-color: var(--color-button-decoration);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-button-primary-hover);
+    opacity: 1;
+  }
+
+  .btn-secondary {
+    text-decoration-color: var(--color-button-decoration);
+  }
+}

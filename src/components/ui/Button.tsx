@@ -1,6 +1,8 @@
 'use client'
 
-interface ButtonProps {
+import cn from '@/lib/utils/cn'
+
+type ButtonProps = {
   children: React.ReactNode
   onClick?: () => void
   size?: 'sm' | 'md' | 'lg'
@@ -15,12 +17,12 @@ export default function Button({
   variant = 'primary',
   className = '',
 }: ButtonProps) {
-  const defaultClasses = 'border-1 border-gray-50 tracking-wide font-nunito text-white'
+  const defaultClasses =
+    'border button-border rounded-4xl tracking-wider text-lg sm:text-base sm:font-light'
 
   const variantClasses = {
-    primary:
-      'bg-cyan-400 underline underline-offset-6 decoration-1 decoration-cyan-400/75 transition-colors duration-100 hover:bg-gray-900',
-    secondary: 'underline underline-offset-7 decoration-cyan-500/75',
+    primary: 'btn-primary underline underline-offset-6 decoration-1 transition-colors duration-300',
+    secondary: 'btn-secondary underline underline-offset-6',
   }
 
   const sizeClasses = {
@@ -32,12 +34,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`
-            ${defaultClasses}
-            ${variantClasses[variant]}
-            ${sizeClasses[size]}
-            ${className}
-        `}
+      className={cn(defaultClasses, variantClasses[variant], sizeClasses[size], className)}
     >
       {children}
     </button>

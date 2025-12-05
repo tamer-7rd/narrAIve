@@ -1,9 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
-@import 'tailwindcss';
+@import "tailwindcss";
+@import '../styles/components.css';
 
 @theme {
-  /* Создаем отдельную переменную для Nunito Sans */
-  --font-nunito:
-    'Nunito Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --font-nunito: var(--font-nunito, sans-serif);
+  --font-logo: var(--font-logo, sans-serif);
+}
+
+:root {
+  --color-page-bg: #ffffff;
+  --color-logo-accent: #00FFFF; 
+  --color-border: #4b5563be;
+  --color-header-bg: oklch(13% 0.028 261.692); 
+  --color-text-primary: #ffffff;
+  --color-text-muted: oklch(70.7% 0.022 261.325);
+  --color-button-primary-bg: #22d3ee;
+  --color-button-primary-hover: #0f172a;
+  --color-button-decoration: #67e8f9;
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page-bg: #181a1b;
+  }
+}
+
+@layer base{
+  body {
+    color-scheme: light dark; /* Указывает браузеру, что страница использует темную тему */
+    background-color: var(--color-page-bg);
+  }
 }

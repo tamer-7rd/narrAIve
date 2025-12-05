@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:mobile": "IP=$(ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print $2}' | head -n1) && if [ -n \"$IP\" ]; then echo \"Open on phone: http://$IP:3000\"; else echo \"Server starting on 0.0.0.0 - check Network URL in Next.js output\"; fi && next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -22,21 +23,26 @@
   },
   "packageManager": "pnpm@10.18.1",
   "dependencies": {
-    "next": "^15.5.4",
+    "clsx": "^2.1.1",
+    "next": "^16.0.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^24.7.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "@vitest/coverage-v8": "^3.2.4",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.37.0",
-    "eslint-config-next": "^15.5.4",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.3",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
@@ -48,7 +54,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix --max-warnings=0",
+      "eslint --fix --max-warnings=0 --no-warn-ignored",
       "prettier --write"
     ],
     "*.{json,md,css,scss,html,yml,yaml}": [
