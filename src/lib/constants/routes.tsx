@@ -31,7 +31,7 @@ export const exploreLinks: FooterLink[] = [
 ]
 
 export const companyLinks: FooterLink[] = [
-  { href: '/about', label: 'About US' },
+  { href: '/about', label: 'About Us' },
   { href: '/subscribe', label: 'Subscription Plans' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms-of-service', label: 'Terms of Service' },

@@ -1,5 +1,6 @@
 import './globals.css'
 import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 import { Nunito_Sans, Orbitron } from 'next/font/google'
 
 const orbitron = Orbitron({
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={nunitoSans.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
