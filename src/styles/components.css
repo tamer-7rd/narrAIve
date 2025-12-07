@@ -19,7 +19,7 @@
     color: var(--color-logo-accent);
   }
 
-  .header-container {
+  .header-footer-container {
     background-color: var(--color-header-bg);
     color: var(--color-text-primary);
   }

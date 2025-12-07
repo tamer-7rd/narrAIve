@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
-  weight: ['300', '500'],
+  weight: ['300', '500', '700'],
   variable: '--font-nunito',
 })
 

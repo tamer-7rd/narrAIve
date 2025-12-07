@@ -32,11 +32,11 @@ export default function Header() {
   }, [closeMenu, isMobileMenuOpen])
 
   return (
-    <header className="header-container px-4">
+    <header className="header-footer-container px-4">
       {/* Desktop version  */}
       <div className="hidden items-center sm:flex sm:flex-nowrap py-1">
         <Logo className="flex-shrink-0 mb-0.5" />
-        <Navigation className="pl-4" linkClassName="m-2" />
+        <Navigation withLabels linkKey="mainNavLinks" className="pl-4" linkClassName="m-2" />
         <SearchBar className="sm:flex-1 sm:px-4" />
         <Button variant="primary" className="mr-2">
           Subscribe
@@ -90,7 +90,9 @@ export default function Header() {
               onItemClick={closeMenu}
               ariaLabel="Mobile Primary Navigation"
               orientation="vertical"
+              withLabels
               withIcons
+              linkKey="mainNavLinks" // keys variants defined in Navigation.tsx
               iconClassName="size-6"
               linkClassName="flex gap-3 py-3 text-lg tracking-wide"
             />
