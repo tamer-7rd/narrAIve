@@ -9,7 +9,7 @@ type LinkProps = {
 }
 
 export default function CustomLink({ children, href, className = '', onClick }: LinkProps) {
-  const defaultClasses = 'text-body'
+  const defaultClasses = 'text-body hover:text-[var(--color-link-hover)]'
   return (
     <Link href={href} onClick={onClick} className={cn(defaultClasses, className)}>
       {children}
