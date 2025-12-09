@@ -9,7 +9,7 @@ type LinkProps = {
 }
 
 export default function CustomLink({ children, href, className = '', onClick }: LinkProps) {
-  const defaultClasses = 'tracking-wide text-base font-light'
+  const defaultClasses = 'text-body'
   return (
     <Link href={href} onClick={onClick} className={cn(defaultClasses, className)}>
       {children}

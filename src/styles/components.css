@@ -1,4 +1,22 @@
 @layer components {
+  /* ===== Typography System ===== */
+  .text-body {
+    @apply text-base sm:text-sm font-light tracking-wide;
+  }
+
+  .text-body-bold {
+    @apply text-base sm:text-sm font-bold tracking-wider;
+  }
+
+  .text-section-title {
+    @apply text-base sm:text-sm font-bold tracking-wider uppercase;
+  }
+
+  .text-button {
+    @apply text-lg sm:text-sm tracking-wider;
+  }
+
+  /* ===== Border & Colors ===== */
   .button-border {
     border-color: var(--color-border);
   }
