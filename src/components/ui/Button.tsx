@@ -5,7 +5,6 @@ import cn from '@/lib/utils/cn'
 type ButtonProps = {
   children: React.ReactNode
   onClick?: () => void
-  size?: 'sm' | 'md' | 'lg'
   variant?: 'primary' | 'secondary'
   className?: string
 }
@@ -13,28 +12,18 @@ type ButtonProps = {
 export default function Button({
   children,
   onClick,
-  size = 'md',
   variant = 'primary',
   className = '',
 }: ButtonProps) {
-  const defaultClasses = 'border button-border rounded-4xl text-button sm:font-light'
+  const defaultClasses = 'border button-border rounded-4xl text-button sm:font-light min-w-40 p-2'
 
   const variantClasses = {
     primary: 'btn-primary underline underline-offset-6 decoration-1 transition-colors duration-300',
     secondary: 'btn-secondary underline underline-offset-6',
   }
 
-  const sizeClasses = {
-    sm: 'min-w-10 p-2',
-    md: 'min-w-40 p-2',
-    lg: 'min-w-80 p-2',
-  }
-
   return (
-    <button
-      onClick={onClick}
-      className={cn(defaultClasses, variantClasses[variant], sizeClasses[size], className)}
-    >
+    <button onClick={onClick} className={cn(defaultClasses, variantClasses[variant], className)}>
       {children}
     </button>
   )
