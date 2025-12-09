@@ -46,7 +46,7 @@ export default function Footer() {
             ariaLabel="Contact Navigation"
             linkKey="socialLinks" // key variants defined in Navigation.tsx
             linkClassName="tracking-wider"
-            iconClassName="size-6"
+            iconClassName="size-5"
           />
           <div className="pb-2">
             <Input type="text" placeholder="Your email" aria-label="Email for subscription" />

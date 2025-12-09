@@ -15,6 +15,7 @@
   --color-text-muted: oklch(70.7% 0.022 261.325);
   --color-button-primary-bg: #22d3ee;
   --color-button-primary-hover: #0f172a;
+  --color-link-hover: #00FFFF;
   --color-button-decoration: #67e8f9;
 }
 
