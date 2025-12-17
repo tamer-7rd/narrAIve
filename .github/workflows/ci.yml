@@ -1,5 +1,17 @@
 name: CI
 
+# Суть CI (Continuous Integration):
+# GitHub Actions запускает этот workflow на чистой виртуальной машине (Ubuntu).
+# Процесс:
+# 1. Арендуется чистый сервер.
+# 2. Клонируется код (git clone).
+# 3. Настраивается окружение (Node.js, pnpm).
+# 4. Устанавливаются библиотеки (node_modules).
+# 5. Выполняются команды проверки (lint, test, build).
+#
+# Если хоть одна команда упадет, PR будет помечен красным.
+# Это гарантирует, что код работает не только "на моем компьютере", но и в нейтральной среде.
+
 on:
   push:
     branches: [main]
@@ -15,15 +27,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          # Совместимо с packageManager и engines
-          version: 10.18.1
+        uses: pnpm/action-setup@v4 # Версия pnpm берется автоматически из поля "packageManager" в package.json
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version-file: 'package.json' # Читает из engines.node и устанавливает версию из package.json
           cache: 'pnpm'
 
       - name: Install dependencies
